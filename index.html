@@ -100,11 +100,9 @@
       transform: none;
     }
   </style>
-  <style id="dark-mode-style"></style>
+  
 </head>
 <body>
-
-<button onclick="toggleDarkMode()" style="position: fixed; top: 20px; left: 20px; z-index: 999; padding: 8px 12px; border: none; background-color: #333; color: white; border-radius: 6px; cursor: pointer;">🌙 다크모드</button>
 
 <main>
   <h1>My Favorite Fashion Item</h1>
@@ -191,16 +189,8 @@
     });
   }, appearOptions);
   faders.forEach(el => observer.observe(el));
-  // Dark mode toggle
-  function toggleDarkMode() {
-    const styleTag = document.getElementById('dark-mode-style');
-    const isDark = styleTag.innerHTML.includes('background-color: #121212');
-    if (!isDark) {
-      styleTag.innerHTML = `
-        body {
-          background-color: #121212;
-          color: #e0e0e0;
-        }
+  
+</script>
 
 </body>
 </html>
