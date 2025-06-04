@@ -52,6 +52,7 @@
     }
 
     #toc {
+      border-radius: 12px;
       position: fixed;
       top: 40px;
       right: 40px;
@@ -99,8 +100,11 @@
       transform: none;
     }
   </style>
+  <style id="dark-mode-style"></style>
 </head>
 <body>
+
+<button onclick="toggleDarkMode()" style="position: fixed; top: 20px; left: 20px; z-index: 999; padding: 8px 12px; border: none; background-color: #333; color: white; border-radius: 6px; cursor: pointer;">🌙 다크모드</button>
 
 <main>
   <h1>My Favorite Fashion Item</h1>
@@ -110,7 +114,7 @@
 
   <section class="fade-in" id="why-chosen">
     <h2>이 신발을 선택한 이유</h2>
-    <img src="marsyard3.jpeg" alt="Mars Yard Shoe">
+    <img src="marsyard.jpeg" alt="Mars Yard Shoe">
     <p class="image-credit">이미지 출처: hypebeast</p>
     <p>
       수많은 스니커즈 중에서 이 신발을 고른 가장 큰 이유는, 단순한 디자인이나 유행이 아닌, 그 안에 담긴 철학과 스토리 때문이다. Tom Sachs의 우주 탐사에 대한 관심이 고스란히 담긴 이 제품은 기능성과 예술성을 동시에 담아낸 실험적 작품이라고 느껴졌다.
@@ -119,7 +123,7 @@
 
   <section class="fade-in" id="favorite-aspect">
     <h2>내가 좋아하는 이유</h2>
-    <img src="marsyard2.jpeg" alt="Mars Yard Shoe 2">
+    <img src="marsyard.jpeg" alt="Mars Yard Shoe 2">
     <p class="image-credit">이미지 출처: hypebeast</p>
     <p>
       나는 이 신발의 소재와 디테일에서 큰 매력을 느낀다. 자연스럽게 낡는 나일론과 스웨이드, 미드솔의 붉은 포인트, 손으로 직접 그린 것 같은 디테일은 공장에서 대량 생산된 신발과는 완전히 다른 감성을 준다. 사용할수록 멋있어진다는 점에서, 단순한 제품이 아닌 나만의 이야기를 담아가는 오브젝트처럼 여겨진다.
@@ -187,7 +191,16 @@
     });
   }, appearOptions);
   faders.forEach(el => observer.observe(el));
-</script>
+  // Dark mode toggle
+  function toggleDarkMode() {
+    const styleTag = document.getElementById('dark-mode-style');
+    const isDark = styleTag.innerHTML.includes('background-color: #121212');
+    if (!isDark) {
+      styleTag.innerHTML = `
+        body {
+          background-color: #121212;
+          color: #e0e0e0;
+        }
 
 </body>
 </html>
