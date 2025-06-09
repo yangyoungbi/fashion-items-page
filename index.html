@@ -99,8 +99,61 @@
       opacity: 1;
       transform: none;
     }
+
+    /* 모바일 대응 스타일 */
+    @media (max-width: 768px) {
+      #toc {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        overflow-x: auto;
+        border-radius: 0;
+        padding: 10px 12px;
+        border-bottom: 1px solid #ddd;
+        background-color: white;
+        z-index: 999;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+
+      #toc h3 {
+        display: none;
+      }
+
+      #toc ul {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      #toc li {
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      #toc a {
+        font-size: 0.9em;
+        color: #333;
+        text-decoration: none;
+        padding: 4px 6px;
+      }
+
+      #toc a.active {
+        font-weight: bold;
+        border-bottom: 2px solid black;
+      }
+
+      main {
+        padding-top: 100px;
+      }
+    }
   </style>
-  
 </head>
 <body>
 
@@ -191,7 +244,6 @@
     });
   }, appearOptions);
   faders.forEach(el => observer.observe(el));
-  
 </script>
 
 </body>
